@@ -16,7 +16,6 @@ import javax.microedition.midlet.MIDletStateChangeException;
 public class FRC_UserProgram extends MIDlet {
 
     protected void startApp() throws MIDletStateChangeException {
-        System.out.println("Hello World");
     }
 
     protected void pauseApp() {
