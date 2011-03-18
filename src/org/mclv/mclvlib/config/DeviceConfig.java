@@ -11,4 +11,5 @@ package org.mclv.mclvlib.config;
  */
 public class DeviceConfig {
 public static boolean CANJag = true;
+public static long JaguarDelay = 20; //Miliseconds
 }

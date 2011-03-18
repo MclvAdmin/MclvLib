@@ -12,7 +12,6 @@ package org.mclv.mclvlib.device;
 public class CanBus implements DataBus{
 public static final int CAN_BUS_MIN = 1;
 public static int deviceCount = 0;
-public static CanBus canBus = CanBus.getInstance();
         private CanBus(){}
         public static CanBus getInstance(){ //fake static.. the variables accessed are static anyway
             return new CanBus();
@@ -21,7 +20,7 @@ public static CanBus canBus = CanBus.getInstance();
             deviceCount++;
             return deviceCount + CAN_BUS_MIN -1;
         }
-        public void resetBus(){
+        public void resetBus(){ //needs proper port freeing procedure
             deviceCount = 0;
         }
 }
