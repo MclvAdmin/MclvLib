@@ -80,13 +80,13 @@
             </view>
             <subprojects/>
         </general-data>
-        <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/1">
+        <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/3">
             <compilation-unit>
                 <package-root>src</package-root>
                 <classpath mode="boot">${sunspot.bootclasspath}</classpath>
-                <classpath mode="compile">${wpilibj.home}/classes.jar</classpath>
+                <classpath mode="compile">E:\Drivers\Java\jdk1.6.0_13\src.zip;${wpilibj.home}/classes.jar</classpath>
                 <built-to>build</built-to>
-                <source-level>1.4</source-level>
+                <source-level>1.6</source-level>
             </compilation-unit>
         </java-data>
     </configuration>

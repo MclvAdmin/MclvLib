@@ -18,9 +18,9 @@ public static int deviceCount = 0;
         }
         public int nextBus(){
             deviceCount++;
-            return deviceCount + PWM_BUS_MIN -1;
+            return deviceCount + PWM_BUS_MIN -1; //-1 because we added a device before the device was initialized
         }
-        public void resetBus(){
+        public void resetBus(){ //need to free the ports that were previously used!
             deviceCount = 0;
         }
 }
