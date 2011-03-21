@@ -50,12 +50,16 @@ public class Hardware implements Runnable{
                 for(int motorSystem = 0; motorSystem<HardwareConfig.motorGroupSystems; motorSystem++){
                     if(HardwareConfig.symmetricalDrive){
                         for(int motorAddress = 0; motorAddress<HardwareConfig.driveSystemMotorCount; motorAddress++){
-                            hardwareContainer.addElement(new HardwareElement(groupIndex + HardwareConfig.minGroups(), motorSystem, motorAddress, new Jaguar()));   
+                            hardwareContainer.addElement(new HardwareElement(groupIndex + HardwareConfig.minGroups(), motorSystem, motorAddress, new Jaguar()));
+                            hardwareThreads.addElement(new Thread(((Jaguar) hardwareContainer.lastElement())));
+                            ((Thread) hardwareThreads.lastElement()).start();
                         }
                     }
                     else{
                         for(int motorAddress = 0; motorAddress<HardwareConfig.driveInit()[motorSystem]; motorAddress++){
                             hardwareContainer.addElement(new HardwareElement(groupIndex + HardwareConfig.minGroups(), motorSystem, motorAddress, new Jaguar()));
+                            hardwareThreads.addElement(new Thread(((Jaguar) hardwareContainer.lastElement())));
+                            ((Thread) hardwareThreads.lastElement()).start();
                         }
                     }
                 }
