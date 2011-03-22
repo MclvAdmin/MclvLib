@@ -15,8 +15,9 @@ public class HumanInputDevice extends InputDevice{
     /* xData structure: first element is a vector containing integer-indexed axes gathered via getRawAxis(int). The data points are doubles.
      * second element contains integer-indexed buttons, gathered via getRawButton(int). The data points are booleans.
      */
-    public HumanInputDevice(String type){
+    public HumanInputDevice(String type, Vector hardwareMap){
         this.type = type;
+        this.hardwareMap = hardwareMap;
         if(type.equals("atk3")){ //Could use switch based on enumeration... damn you 1.4!
             inputObject = new Joystick(DsBus.getInstance().nextBus());
         }

@@ -4,13 +4,14 @@
  */
 
 package org.mclv.mclvlib.device;
-
+import java.util.Vector;
 /**
  *
  * @author god
  */
 public abstract class InputDevice implements Runnable{
     public String type;
+    public Vector hardwareMap;
     public Object inputObject;
     public Object newData;
     public Object oldData;
